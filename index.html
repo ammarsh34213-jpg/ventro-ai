@@ -1,266 +1,249 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" id="html-root">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventro AI V3.0 - المنصة الذكية للتجارة الإلكترونية</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Cairo', sans-serif; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Ventro AI V3.0 - المنصة المثالية للتجارة والذكاء الاصطناعي</title>
+  
+  <!-- PWA App Settings -->
+  <meta name="theme-color" content="#0B0F17">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Ventro AI">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    body { font-family: 'Tajawal', sans-serif; background-color: #0b0f17; color: #f3f4f6; -webkit-tap-highlight-color: transparent; }
+    .gradient-text {
+      background: linear-gradient(135deg, #60A5FA 0%, #A855F7 50%, #EC4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-border {
+      border: 1px solid transparent;
+      background: linear-gradient(#111827, #111827) padding-box,
+                  linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899) border-box;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col justify-between p-3 md:p-6 pb-12">
 
-    <!-- شريط التنقل العلوي -->
-    <header class="bg-slate-800 border-b border-slate-700 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3 space-x-reverse">
-                <span class="bg-indigo-600 text-white font-bold p-2 rounded-xl text-xl">V3</span>
-                <div>
-                    <h1 class="text-lg font-extrabold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Ventro AI</h1>
-                    <p class="text-[10px] text-slate-400" id="founder-text">المؤسس: عمار سعيد حداد</p>
-                </div>
-            </div>
-            
-            <!-- أدوات التحكم (اللغة والعملة) -->
-            <div class="flex items-center space-x-2 space-x-reverse">
-                <select id="lang-select" onchange="changeLanguage()" class="bg-slate-900 text-slate-200 text-xs border border-slate-700 rounded-lg px-2 py-1 focus:outline-none">
-                    <option value="ar">العربية</option>
-                    <option value="fr">Français</option>
-                    <option value="en">English</option>
-                </select>
-
-                <select id="currency-select" onchange="changeCurrency()" class="bg-slate-900 text-slate-200 text-xs border border-slate-700 rounded-lg px-2 py-1 focus:outline-none">
-                    <option value="DZD">دج (DZD)</option>
-                    <option value="USD">$ (USD)</option>
-                    <option value="EUR">€ (EUR)</option>
-                    <option value="GBP">£ (GBP)</option>
-                </select>
-            </div>
-        </div>
-    </header>
-
-    <!-- المحتوى الرئيسي -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 py-6 w-full space-y-6">
-
-        <!-- بطاقة الترحيب والذكاء الاصطناعي -->
-        <section class="bg-gradient-to-br from-indigo-900/60 to-slate-800 p-6 rounded-2xl border border-indigo-500/30 shadow-xl">
-            <h2 id="hero-title" class="text-2xl font-bold mb-2 text-indigo-300">مرحباً بك في مستقبل التجارة بالذكاء الاصطناعي</h2>
-            <p id="hero-desc" class="text-slate-300 text-sm mb-4">منصتك المتكاملة للبيع، الشراء، والتنبؤ بالأسعار بذكاء تام.</p>
-            
-            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700">
-                <div class="flex items-center mb-3 space-x-2 space-x-reverse">
-                    <div class="w-3 h-3 bg-indigo-500 rounded-full animate-pulse"></div>
-                    <span id="ai-status" class="text-xs font-semibold text-indigo-400">مساعد فينترو الذكي (Gemini Ready)</span>
-                </div>
-                <div id="chat-output" class="text-sm text-slate-200 bg-slate-800/50 p-3 rounded-lg mb-3 min-h-[60px] max-h-32 overflow-y-auto">
-                    أهلاً يا عمار! كيف يمكنني مساعدتك في مشروعك اليوم؟ اكتب لي ما تريد البحث عنه أو بيعه.
-                </div>
-                <div class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="اسأل الذكاء الاصطناعي عن أي منتج..." class="flex-grow bg-slate-800 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500">
-                    <button onclick="sendAIQuery()" id="send-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl text-sm font-semibold transition-all">إرسال</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- قسم المنتجات -->
-        <section>
-            <div class="flex justify-between items-center mb-4">
-                <h3 id="products-title" class="text-lg font-bold text-white">المنتجات المعروضة</h3>
-                <button onclick="openAddModal()" id="add-btn-text" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-3 py-2 rounded-xl font-semibold transition-all">+ إضافة منتج جديد</button>
-            </div>
-            
-            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                <div class="bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col justify-between product-card" data-base-price="4500">
-                    <div>
-                        <div class="bg-slate-700 h-32 rounded-lg mb-3 flex items-center justify-center text-slate-500 text-sm img-text">صورة المنتَج</div>
-                        <h4 class="font-bold text-white mb-1">سترة شتوية فاخرة</h4>
-                        <p class="text-xs text-slate-400 mb-3">مصممة خصيصاً لمطوري ومحبي الأناقة التقنية.</p>
-                    </div>
-                    <div class="flex justify-between items-center mt-2">
-                        <span class="text-emerald-400 font-bold text-sm price-tag">4,500 دج</span>
-                        <a href="https://wa.me/" target="_blank" class="bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 text-xs px-3 py-1.5 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-all wa-text">اطلب عبر واتساب</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- نافذة إضافة منتج -->
-    <div id="add-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm hidden flex items-center justify-center p-4 z-50">
-        <div class="bg-slate-800 border border-slate-700 w-full max-w-md p-6 rounded-2xl space-y-4">
-            <h3 id="modal-title" class="text-lg font-bold text-white">إضافة منتج جديد للتاجر</h3>
-            <input type="text" id="new-title" placeholder="اسم المنتج" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white">
-            <input type="number" id="new-price" placeholder="السعر بالأرقام فقط (مثال: 2000)" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white">
-            <textarea id="new-desc" placeholder="وصف قصير للمنتج" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white resize-none h-20"></textarea>
-            <div class="flex justify-end space-x-2 space-x-reverse">
-                <button onclick="closeAddModal()" id="cancel-btn" class="bg-slate-700 text-slate-300 px-4 py-2 rounded-xl text-xs font-semibold">إلغاء</button>
-                <button onclick="saveProduct()" id="save-btn" class="bg-indigo-600 text-white px-4 py-2 rounded-xl text-xs font-semibold">حفظ وعرض</button>
-            </div>
-        </div>
+  <!-- Header -->
+  <header class="w-full max-w-4xl mx-auto flex justify-between items-center p-4 rounded-2xl glass-card shadow-2xl sticky top-2 z-50">
+    <div class="flex items-center gap-3">
+      <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 shadow-lg shadow-blue-500/40">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+        </svg>
+      </div>
+      <div>
+        <h1 class="text-lg font-black text-white flex items-center gap-1.5">
+          Ventro <span class="gradient-text">AI</span> 
+          <span class="text-[9px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">V3.0 Ultimate</span>
+        </h1>
+        <p class="text-[10px] text-gray-400 font-medium">المؤسس: عمار سعيد حداد</p>
+      </div>
     </div>
 
-    <!-- تذييل الصفحة -->
-    <footer class="bg-slate-800 border-t border-slate-700 py-4 text-center text-xs text-slate-400">
-        Ventro AI V3.0 &copy; 2026 - صُنع بكل شغف بواسطة عمار سعيد حداد
-    </footer>
+    <!-- التحكم باللغة والعملة -->
+    <div class="flex items-center gap-1.5">
+      <select id="langSelect" onchange="updateLang()" class="bg-gray-800 border border-gray-700 text-xs text-gray-200 rounded-xl px-2 py-1.5 focus:outline-none">
+        <option value="ar">العربية 🇩🇿</option>
+        <option value="en">English 🇺🇸</option>
+        <option value="fr">Français 🇫🇷</option>
+      </select>
+      <select id="currSelect" onchange="updateCurrency()" class="bg-gray-800 border border-gray-700 text-xs text-gray-200 rounded-xl px-2 py-1.5 focus:outline-none">
+        <option value="DZD">دج (DZD)</option>
+        <option value="USD">$ (USD)</option>
+        <option value="EUR">€ (EUR)</option>
+      </select>
+    </div>
+  </header>
 
-    <script>
-        // ترجمات اللغات
-        const translations = {
-            ar: {
-                founder: "المؤسس: عمار سعيد حداد",
-                heroTitle: "مرحباً بك في مستقبل التجارة بالذكاء الاصطناعي",
-                heroDesc: "منصتك المتكاملة للبيع، الشراء، والتنبؤ بالأسعار بذكاء تام.",
-                aiStatus: "مساعد فينترو الذكي (Gemini Ready)",
-                aiPlaceholder: "اسأل الذكاء الاصطناعي عن أي منتج...",
-                sendBtn: "إرسال",
-                productsTitle: "المنتجات المعروضة",
-                addBtn: "+ إضافة منتج جديد",
-                waText: "اطلب عبر واتساب",
-                imgText: "صورة المنتَج",
-                modalTitle: "إضافة منتج جديد للتاجر",
-                namePlaceholder: "اسم المنتج",
-                pricePlaceholder: "السعر بالأرقام فقط (مثال: 2000)",
-                descPlaceholder: "وصف قصير للمنتج",
-                cancelBtn: "إلغاء",
-                saveBtn: "حفظ وعرض",
-                chatWelcome: "أهلاً يا عمار! كيف يمكنني مساعدتك في مشروعك اليوم؟ اكتب لي ما تريد البحث عنه أو بيعه."
-            },
-            fr: {
-                founder: "Fondateur : Ammar Said Haddad",
-                heroTitle: "Bienvenue dans le futur du commerce par IA",
-                heroDesc: "Votre plateforme intégrée pour vendre, acheter et prédire les prix intelligemment.",
-                aiStatus: "Assistant IA Ventro (Prتt pour Gemini)",
-                aiPlaceholder: "Posez une question à l'IA...",
-                sendBtn: "Envoyer",
-                productsTitle: "Produits en vedette",
-                addBtn: "+ Ajouter un produit",
-                waText: "Commander via WhatsApp",
-                imgText: "Image du produit",
-                modalTitle: "Ajouter un nouveau produit",
-                namePlaceholder: "Nom du produit",
-                pricePlaceholder: "Prix en chiffres (ex: 2000)",
-                descPlaceholder: "Cour setDescription",
-                cancelBtn: "Annuler",
-                saveBtn: "Enregistrer",
-                chatWelcome: "Bonjour Ammar ! Comment puis-je vous aider aujourd'hui ?"
-            },
-            en: {
-                founder: "Founder: Ammar Said Haddad",
-                heroTitle: "Welcome to the Future of AI Commerce",
-                heroDesc: "Your integrated platform for smart buying, selling, and price prediction.",
-                aiStatus: "Ventro AI Assistant (Gemini Ready)",
-                aiPlaceholder: "Ask AI about any product...",
-                sendBtn: "Send",
-                productsTitle: "Featured Products",
-                addBtn: "+ Add New Product",
-                waText: "Order via WhatsApp",
-                imgText: "Product Image",
-                modalTitle: "Add New Merchant Product",
-                namePlaceholder: "Product Name",
-                pricePlaceholder: "Price in numbers only (e.g. 2000)",
-                descPlaceholder: "Short product description",
-                cancelBtn: "Cancel",
-                saveBtn: "Save & Display",
-                chatWelcome: "Hello Ammar! How can I help you with your project today?"
-            }
-        };
+  <!-- Main Body -->
+  <main class="w-full max-w-4xl mx-auto my-6 space-y-6">
 
-        function changeLanguage() {
-            const lang = document.getElementById('lang-select').value;
-            const root = document.getElementById('html-root');
-            
-            root.setAttribute('lang', lang);
-            root.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+    <!-- Hero Title -->
+    <div class="text-center space-y-2 py-2">
+      <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        <span id="txtBadge">منصة التجارة والذكاء الاصطناعي الأقوى</span>
+      </span>
+      <h2 id="txtHeroHeader" class="text-2xl md:text-4xl font-black text-white">
+        مستقبل التجارة والتسوق الذكي
+      </h2>
+      <p id="txtHeroSub" class="text-gray-400 text-xs max-w-md mx-auto">
+        منصتك المتكاملة للبيع، الشراء، والتنبؤ بالأسعار بذكاء تام.
+      </p>
+    </div>
 
-            const t = translations[lang];
-            document.getElementById('founder-text').innerText = t.founder;
-            document.getElementById('hero-title').innerText = t.heroTitle;
-            document.getElementById('hero-desc').innerText = t.heroDesc;
-            document.getElementById('ai-status').innerText = t.aiStatus;
-            document.getElementById('chat-input').placeholder = t.aiPlaceholder;
-            document.getElementById('send-btn').innerText = t.sendBtn;
-            document.getElementById('products-title').innerText = t.productsTitle;
-            document.getElementById('add-btn-text').innerText = t.addBtn;
-            document.getElementById('modal-title').innerText = t.modalTitle;
-            document.getElementById('new-title').placeholder = t.namePlaceholder;
-            document.getElementById('new-price').placeholder = t.pricePlaceholder;
-            document.getElementById('new-desc').placeholder = t.descPlaceholder;
-            document.getElementById('cancel-btn').innerText = t.cancelBtn;
-            document.getElementById('save-btn').innerText = t.saveBtn;
-            
-            document.querySelectorAll('.wa-text').forEach(el => el.innerText = t.waText);
-            document.querySelectorAll('.img-text').forEach(el => el.innerText = t.imgText);
-        }
+    <!-- AI Chat System -->
+    <div class="gradient-border rounded-2xl p-4 shadow-2xl space-y-3 glass-card">
+      <div class="flex items-center justify-between text-xs font-bold text-blue-400 border-b border-gray-800 pb-2">
+        <div class="flex items-center gap-2">
+          <span>🤖</span> <span id="txtAiTitle">مساعد فينترو الذكي (Gemini Ready)</span>
+        </div>
+        <span class="text-[10px] text-green-400">متصل 🟢</span>
+      </div>
 
-        function changeCurrency() {
-            const currency = document.getElementById('currency-select').value;
-            let symbol = 'دج';
-            let rate = 1;
+      <div id="chatBox" class="bg-gray-950 rounded-xl p-3 border border-gray-800 text-xs space-y-2 max-h-40 overflow-y-auto">
+        <div class="bg-blue-900/30 border border-blue-500/30 text-blue-200 p-2.5 rounded-lg max-w-[90%]">
+          مرحباً يا <strong>عمار</strong>! كيف يمكنني مساعدتك في تجاراتك أو البحث عن المنتجات اليوم؟
+        </div>
+      </div>
 
-            if (currency === 'USD') { symbol = '$'; rate = 0.0074; } // تحويل تقريبي للتوضيح
-            else if (currency === 'EUR') { symbol = '€'; rate = 0.0068; }
-            else if (currency === 'GBP') { symbol = '£'; rate = 0.0058; }
+      <div class="flex gap-2">
+        <input id="userInput" type="text" placeholder="اكتب سؤالك للذكاء الاصطناعي..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-purple-500">
+        <button onclick="sendAI()" id="btnSend" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition shadow-lg">
+          إرسال
+        </button>
+      </div>
+    </div>
 
-            document.querySelectorAll('.product-card').forEach(card => {
-                const basePrice = parseFloat(card.getAttribute('data-base-price'));
-                const converted = (basePrice * rate).toFixed(currency === 'DZD' ? 0 : 2);
-                const priceSpan = card.querySelector('.price-tag');
-                priceSpan.innerText = currency === 'DZD' ? `${converted} دج` : `${symbol}${converted}`;
-            });
-        }
+    <!-- Products Grid -->
+    <div class="space-y-3">
+      <div class="flex justify-between items-center">
+        <h3 id="txtProductsTitle" class="text-base font-bold text-white flex items-center gap-2">
+          🛍️ المنتجات والسلع المعروضة
+        </h3>
+        <button onclick="addNewProduct()" id="btnAddProduct" class="text-xs bg-blue-600/20 border border-blue-500/30 text-blue-400 hover:bg-blue-600 hover:text-white px-3 py-1.5 rounded-lg transition font-bold">
+          + إضافة منتج جديد
+        </button>
+      </div>
 
-        function sendAIQuery() {
-            const input = document.getElementById('chat-input');
-            const output = document.getElementById('chat-output');
-            if(input.value.trim() === '') return;
-            
-            output.innerHTML = `<span class="text-indigo-400">أنت / You:</span> ${input.value}<br><span class="text-emerald-400">Ventro AI:</span> ممتاز يا عمار! يتم معالجة طلبك عبر الذكاء الاصطناعي بنجاح.`;
-            input.value = '';
-        }
+      <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Item 1 -->
+        <div class="glass-card rounded-xl p-3.5 space-y-3 hover:border-blue-500/50 transition">
+          <div class="h-36 bg-gray-900 rounded-lg flex items-center justify-center text-4xl border border-gray-800 relative">
+            🧥
+            <span class="absolute top-2 right-2 bg-blue-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">مميز</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm">سترة شتوية فاخرة</h4>
+            <p class="text-[11px] text-gray-400">تصميم راقٍ ومريح للغاية لجميع الأوقات.</p>
+          </div>
+          <div class="flex justify-between items-center pt-2 border-t border-gray-800">
+            <span id="price1" class="text-sm font-black text-green-400">4,500 دج</span>
+            <button onclick="buyProduct('سترة شتوية فاخرة')" class="bg-green-600 hover:bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition shadow-lg flex items-center gap-1">
+              شراء الآن 🛒
+            </button>
+          </div>
+        </div>
 
-        function openAddModal() { document.getElementById('add-modal').classList.remove('hidden'); }
-        function closeAddModal() { document.getElementById('add-modal').classList.add('hidden'); }
+        <!-- Item 2 -->
+        <div class="glass-card rounded-xl p-3.5 space-y-3 hover:border-purple-500/50 transition">
+          <div class="h-36 bg-gray-900 rounded-lg flex items-center justify-center text-4xl border border-gray-800 relative">
+            ⌚
+            <span class="absolute top-2 right-2 bg-purple-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">ذكي</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-sm">ساعة Ventro الذكية</h4>
+            <p class="text-[11px] text-gray-400">تدعم الذكاء الاصطناعي وتتبع اللياقة بدقة.</p>
+          </div>
+          <div class="flex justify-between items-center pt-2 border-t border-gray-800">
+            <span id="price2" class="text-sm font-black text-purple-400">8,900 دج</span>
+            <button onclick="buyProduct('ساعة Ventro الذكية')" class="bg-green-600 hover:bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition shadow-lg flex items-center gap-1">
+              شراء الآن 🛒
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        function saveProduct() {
-            const title = document.getElementById('new-title').value;
-            const priceVal = document.getElementById('new-price').value;
-            const desc = document.getElementById('new-desc').value;
+  </main>
 
-            if(!title || !priceVal) {
-                alert('يرجى إدخال اسم المنتج والسعر!');
-                return;
-            }
+  <!-- Footer -->
+  <footer class="w-full max-w-4xl mx-auto text-center py-3 border-t border-gray-800/80 text-[11px] text-gray-500 glass-card rounded-xl">
+    © 2026 Ventro AI V3.0 — تطوير وإشراف المؤسس <span class="text-blue-400 font-bold">عمار سعيد حداد</span>
+  </footer>
 
-            const grid = document.getElementById('products-grid');
-            const newCard = document.createElement('div');
-            newCard.className = "bg-slate-800 border border-slate-700 rounded-xl p-4 flex flex-col justify-between product-card";
-            newCard.setAttribute('data-base-price', priceVal);
-            
-            const currency = document.getElementById('currency-select').value;
-            let symbol = currency === 'DZD' ? 'دج' : (currency === 'USD' ? '$' : (currency === 'EUR' ? '€' : '£'));
+  <!-- App Script -->
+  <script>
+    function sendAI() {
+      const input = document.getElementById('userInput');
+      const chatBox = document.getElementById('chatBox');
+      if (input.value.trim() !== '') {
+        const userMsg = document.createElement('div');
+        userMsg.className = 'bg-gray-800 border border-gray-700 text-white p-2 rounded-lg max-w-[85%] mr-auto text-left';
+        userMsg.innerText = input.value;
+        chatBox.appendChild(userMsg);
 
-            newCard.innerHTML = `
-                <div>
-                    <div class="bg-slate-700 h-32 rounded-lg mb-3 flex items-center justify-center text-slate-500 text-sm img-text">منتج جديد</div>
-                    <h4 class="font-bold text-white mb-1">${title}</h4>
-                    <p class="text-xs text-slate-400 mb-3">${desc || 'لا يوجد وصف.'}</p>
-                </div>
-                <div class="flex justify-between items-center mt-2">
-                    <span class="text-emerald-400 font-bold text-sm price-tag">${priceVal} ${symbol}</span>
-                    <a href="https://wa.me/" target="_blank" class="bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 text-xs px-3 py-1.5 rounded-lg font-semibold hover:bg-emerald-600 hover:text-white transition-all wa-text">اطلب عبر واتساب</a>
-                </div>
-            `;
-            grid.prepend(newCard);
-            closeAddModal();
-            
-            document.getElementById('new-title').value = '';
-            document.getElementById('new-price').value = '';
-            document.getElementById('new-desc').value = '';
-        }
-    </script>
+        const aiMsg = document.createElement('div');
+        aiMsg.className = 'bg-blue-900/30 border border-blue-500/30 text-blue-200 p-2 rounded-lg max-w-[85%]';
+        aiMsg.innerText = "أهلاً عمار! جاري معالجة طلبك: '" + input.value + "'";
+        setTimeout(() => chatBox.appendChild(aiMsg), 500);
+        
+        input.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+
+    function buyProduct(productName) {
+      alert("تم اختيار: " + productName + "\nسيتم تحويلك الآن لتأكيد الشراء عبر الواتساب مع المؤسس عمار!");
+      window.open('https://wa.me/?text=' + encodeURIComponent('مرحباً عمار، أريد شراء المنتج: ' + productName), '_blank');
+    }
+
+    function addNewProduct() {
+      const name = prompt("أدخل اسم السلعة الجديدة:");
+      const price = prompt("أدخل سعر السلعة (بالدينار):");
+      if (name && price) {
+        const grid = document.getElementById('productsGrid');
+        const newCard = document.createElement('div');
+        newCard.className = 'glass-card rounded-xl p-3.5 space-y-3 border border-blue-500/40';
+        newCard.innerHTML = `
+          <div class="h-36 bg-gray-900 rounded-lg flex items-center justify-center text-4xl border border-gray-800 relative">📦</div>
+          <div>
+            <h4 class="font-bold text-white text-sm">${name}</h4>
+            <p class="text-[11px] text-gray-400">منتج جديد تم إضافته حديثاً للمنصة.</p>
+          </div>
+          <div class="flex justify-between items-center pt-2 border-t border-gray-800">
+            <span class="text-sm font-black text-green-400">${price} دج</span>
+            <button onclick="buyProduct('${name}')" class="bg-green-600 hover:bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">شراء الآن 🛒</button>
+          </div>
+        `;
+        grid.appendChild(newCard);
+      }
+    }
+
+    function updateCurrency() {
+      const curr = document.getElementById('currSelect').value;
+      const p1 = document.getElementById('price1');
+      const p2 = document.getElementById('price2');
+      if (curr === 'USD') { p1.innerText = '$30'; p2.innerText = '$60'; }
+      else if (curr === 'EUR') { p1.innerText = '28 €'; p2.innerText = '55 €'; }
+      else { p1.innerText = '4,500 دج'; p2.innerText = '8,900 دج'; }
+    }
+
+    function updateLang() {
+      const lang = document.getElementById('langSelect').value;
+      if (lang === 'en') {
+        document.getElementById('txtHeroHeader').innerText = "The Future of Smart E-Commerce";
+        document.getElementById('txtHeroSub').innerText = "Your all-in-one platform for buying, selling & AI predictions.";
+        document.getElementById('txtProductsTitle').innerText = "🛍️ Available Products";
+        document.getElementById('btnAddProduct').innerText = "+ Add New Product";
+        document.getElementById('btnSend').innerText = "Send";
+      } else if (lang === 'fr') {
+        document.getElementById('txtHeroHeader').innerText = "L'Avenir du E-Commerce Intelligent";
+        document.getElementById('txtHeroSub').innerText = "Votre plateforme intégrée pour acheter, vendre et prédire.";
+        document.getElementById('txtProductsTitle').innerText = "🛍️ Produits Disponibles";
+        document.getElementById('btnAddProduct').innerText = "+ Ajouter un produit";
+        document.getElementById('btnSend').innerText = "Envoyer";
+      } else {
+        document.getElementById('txtHeroHeader').innerText = "مستقبل التجارة والتسوق الذكي";
+        document.getElementById('txtHeroSub').innerText = "منصتك المتكاملة للبيع، الشراء، والتنبؤ بالأسعار بذكاء تام.";
+        document.getElementById('txtProductsTitle').innerText = "🛍️ المنتجات والسلع المعروضة";
+        document.getElementById('btnAddProduct').innerText = "+ إضافة منتج جديد";
+        document.getElementById('btnSend').innerText = "إرسال";
+      }
+    }
+  </script>
+
 </body>
 </html>
