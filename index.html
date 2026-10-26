@@ -1,249 +1,164 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr" id="appRoot">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Ventro AI V3.0 - المنصة المثالية للتجارة والذكاء الاصطناعي</title>
-  
-  <!-- PWA App Settings -->
-  <meta name="theme-color" content="#0B0F17">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Ventro AI">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-  
-  <style>
-    body { font-family: 'Tajawal', sans-serif; background-color: #0b0f17; color: #f3f4f6; -webkit-tap-highlight-color: transparent; }
-    .gradient-text {
-      background: linear-gradient(135deg, #60A5FA 0%, #A855F7 50%, #EC4899 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .gradient-border {
-      border: 1px solid transparent;
-      background: linear-gradient(#111827, #111827) padding-box,
-                  linear-gradient(135deg, #3B82F6, #8B5CF6, #EC4899) border-box;
-    }
-    .glass-card {
-      background: rgba(17, 24, 39, 0.75);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0c0c14">
+<meta name="description" content="Ventro AI — Discover smarter. Shop beyond.">
+<title>Ventro AI — Global Smart Commerce</title>
+<style>
+:root{--bg:#0c0c14;--panel:#151521;--panel2:#202034;--line:#303047;--text:#f7f7fc;--muted:#aaaac0;--purple:#8b5cf6;--blue:#38bdf8;--green:#22c55e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#251342,var(--bg) 50%);color:var(--text);font-family:system-ui,Arial,sans-serif;line-height:1.6}body[dir=rtl]{font-family:Tahoma,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--blue);outline-offset:2px}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#0c0c14ed;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff15}.nav{min-height:72px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:20px;letter-spacing:1px}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:28px;font-weight:1000;background:linear-gradient(135deg,#a78bfa,#38bdf8);box-shadow:0 0 25px #8b5cf644;color:white}.brand span{color:#a78bfa}.navtools{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.field,select,textarea,input{background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:11px 12px;min-width:0}select{max-width:150px}.btn{border:0;border-radius:12px;padding:11px 16px;background:linear-gradient(120deg,var(--purple),#6d28d9);color:white;font-weight:750}.btn.secondary{background:var(--panel2);border:1px solid var(--line)}.btn.green{background:#166534}.btn:hover{filter:brightness(1.12)}.hero{padding:65px 0 42px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}.eyebrow{display:inline-block;padding:7px 12px;border-radius:50px;border:1px solid #8b5cf655;background:#8b5cf61b;color:#d8ccff;font-size:13px}.hero h1{font-size:clamp(36px,5vw,64px);line-height:1.1;margin:20px 0}.gradient{background:linear-gradient(100deg,#fff,#c4b5fd,#38bdf8);color:transparent;background-clip:text;-webkit-background-clip:text}.hero p,.muted{color:var(--muted)}.hero p{font-size:17px;max-width:620px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.heroCard{padding:25px;border:1px solid #ffffff20;border-radius:25px;background:radial-gradient(circle at 80% 15%,#8b5cf633,transparent 45%),linear-gradient(145deg,#1e1a32,#141421);min-height:320px;display:flex;flex-direction:column;justify-content:space-between}.orb{width:130px;height:130px;margin:20px auto;border-radius:50%;border:1px solid #8b5cf6;display:grid;place-items:center;box-shadow:0 0 50px #8b5cf633}.orb .logo{width:80px;height:80px;font-size:48px;border-radius:25px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{padding:12px;background:#ffffff08;border:1px solid var(--line);border-radius:13px}.stat b{display:block;font-size:19px}.stat small{color:var(--muted)}.section{padding:32px 0 42px}.head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:20px}.head h2{margin:0;font-size:clamp(24px,3vw,34px)}.head p{margin:5px 0 0;color:var(--muted)}.filters,.chips{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}.filters input{flex:1;min-width:180px}.chip{background:var(--panel);border:1px solid var(--line);color:var(--muted);padding:9px 14px;border-radius:30px}.chip.active{background:#8b5cf633;color:white;border-color:var(--purple)}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.product{background:linear-gradient(145deg,#191927,#11111b);border:1px solid #ffffff15;border-radius:19px;overflow:hidden;min-width:0;transition:.2s}.product:hover{transform:translateY(-3px);border-color:#8b5cf677}.photo{height:190px;background:#242438;position:relative;display:grid;place-items:center;overflow:hidden}.photo img{width:100%;height:100%;object-fit:cover}.emoji{font-size:65px}.tag{position:absolute;top:10px;inset-inline-start:10px;background:#8b5cf6ed;padding:5px 9px;border-radius:9px;font-size:11px}.heart{position:absolute;top:10px;inset-inline-end:10px;border:1px solid #ffffff33;background:#10101bcc;color:white;border-radius:50%;width:36px;height:36px;font-size:19px}.body{padding:15px}.body h3{margin:0 0 8px;font-size:17px}.body p{font-size:13px;color:var(--muted);min-height:42px}.priceRow{display:flex;justify-content:space-between;align-items:center;gap:8px}.price{font-weight:850;font-size:20px;color:#c4b5fd}.productActions{display:flex;gap:8px;margin-top:13px}.productActions button{flex:1;padding:9px 6px;font-size:13px}.empty{grid-column:1/-1;text-align:center;padding:35px;border:1px dashed var(--line);border-radius:16px;color:var(--muted)}.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.feature,.panel{background:linear-gradient(145deg,#191927,#12121c);border:1px solid var(--line);border-radius:18px;padding:20px}.feature strong{font-size:24px}.feature h3{margin:8px 0}.feature p{color:var(--muted);font-size:14px}.panel textarea{width:100%;min-height:100px;resize:vertical}.panel input,.panel select{width:100%}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.formgrid .full{grid-column:1/-1}.notice{margin-top:13px;padding:12px;border:1px solid #f59e0b55;background:#78350f22;border-radius:12px;color:#fde68a;font-size:13px}.result{margin-top:15px;line-height:1.8}.resultItem{border:1px solid var(--line);padding:12px;border-radius:12px;margin-top:8px}.footer{border-top:1px solid #ffffff15;padding:28px 0;margin-top:30px;color:var(--muted);font-size:13px}.modalbg{position:fixed;inset:0;background:#000b;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.modalbg.open{display:flex}.modal{width:min(560px,100%);max-height:90vh;overflow:auto;background:#171725;border:1px solid var(--line);border-radius:22px;padding:22px}.modalhead{display:flex;align-items:center;justify-content:space-between;gap:10px}.modalhead h2{margin:0}.cartline{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.small{font-size:12px;color:var(--muted)}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:50;background:#25253a;border:1px solid #ffffff22;border-radius:12px;padding:12px 18px;box-shadow:0 12px 35px #0008;max-width:90%;text-align:center}.hidden{display:none!important}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:38px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.features{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.nav{padding:10px 0}.navtools{width:100%}.navtools select{flex:1;max-width:none}.grid,.features,.formgrid{grid-template-columns:1fr}.formgrid .full{grid-column:auto}.photo{height:215px}.heroCard{min-height:280px}.stats{gap:6px}.stat{padding:8px}.stat b{font-size:16px}}
+</style>
 </head>
-<body class="min-h-screen flex flex-col justify-between p-3 md:p-6 pb-12">
+<body>
+<header>
+<div class="wrap nav">
+<a href="#home" class="brand"><div class="logo">V</div><div>VENTRO <span>AI</span><small class="muted" style="display:block;font-size:10px;letter-spacing:0">GLOBAL SMART COMMERCE</small></div></a>
+<div class="navtools">
+<select id="languageSelect" aria-label="Language"><option value="en">English</option><option value="ar">العربية</option><option value="fr">Français</option><option value="es">Español</option><option value="zh">中文</option><option value="ru">Русский</option></select>
+<select id="currencySelect" aria-label="Currency"><option value="EUR">EUR €</option><option value="DZD">DZD دج</option><option value="USD">USD $</option><option value="GBP">GBP £</option></select>
+<button class="btn secondary" id="wishBtn">♡ <span id="wishCount">0</span></button>
+<button class="btn secondary" id="cartBtn">🛒 <span id="cartCount">0</span></button>
+</div>
+</div>
+</header>
 
-  <!-- Header -->
-  <header class="w-full max-w-4xl mx-auto flex justify-between items-center p-4 rounded-2xl glass-card shadow-2xl sticky top-2 z-50">
-    <div class="flex items-center gap-3">
-      <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 shadow-lg shadow-blue-500/40">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-        </svg>
-      </div>
-      <div>
-        <h1 class="text-lg font-black text-white flex items-center gap-1.5">
-          Ventro <span class="gradient-text">AI</span> 
-          <span class="text-[9px] px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">V3.0 Ultimate</span>
-        </h1>
-        <p class="text-[10px] text-gray-400 font-medium">المؤسس: عمار سعيد حداد</p>
-      </div>
-    </div>
+<main>
+<section class="wrap hero" id="home">
+<div>
+<div class="eyebrow" data-t="eyebrow">✦ The next generation of smart shopping</div>
+<h1><span data-t="line1">Discover better.</span><br><span class="gradient" data-t="line2">Shop smarter.</span></h1>
+<p data-t="heroDesc">Discover products, compare options, and find what fits your needs and budget.</p>
+<div class="actions"><a class="btn" href="#discover" data-t="explore">Explore products ↗</a><a class="btn secondary" href="#assistant" data-t="tryAI">Try shopping assistant</a></div>
+<p class="muted" style="font-size:13px">✦ <span data-t="multi">6 languages · 4 currencies · Smart discovery</span></p>
+</div>
+<div class="heroCard">
+<div><div class="eyebrow">VENTRO INTELLIGENCE</div><h2 data-t="future">Shopping from the future</h2><p class="muted" data-t="futureDesc">Discover. Compare. Choose what fits.</p></div>
+<div class="orb"><div class="logo">V</div></div>
+<div class="stats"><div class="stat"><b>6</b><small data-t="languages">Languages</small></div><div class="stat"><b>4</b><small data-t="currencies">Currencies</small></div><div class="stat"><b>AI</b><small data-t="discovery">Discovery</small></div></div>
+</div>
+</section>
 
-    <!-- التحكم باللغة والعملة -->
-    <div class="flex items-center gap-1.5">
-      <select id="langSelect" onchange="updateLang()" class="bg-gray-800 border border-gray-700 text-xs text-gray-200 rounded-xl px-2 py-1.5 focus:outline-none">
-        <option value="ar">العربية 🇩🇿</option>
-        <option value="en">English 🇺🇸</option>
-        <option value="fr">Français 🇫🇷</option>
-      </select>
-      <select id="currSelect" onchange="updateCurrency()" class="bg-gray-800 border border-gray-700 text-xs text-gray-200 rounded-xl px-2 py-1.5 focus:outline-none">
-        <option value="DZD">دج (DZD)</option>
-        <option value="USD">$ (USD)</option>
-        <option value="EUR">€ (EUR)</option>
-      </select>
-    </div>
-  </header>
+<section class="wrap section" id="discover">
+<div class="head"><div><h2 data-t="products">Discover products</h2><p data-t="productDesc">Explore sample products in the Ventro demo.</p></div><button class="btn" id="showForm" data-t="addProduct">+ Add product</button></div>
+<div class="filters">
+<input id="search" type="search" data-ph="searchPH" placeholder="Search products...">
+<select id="sort"><option value="featured" data-t="featured">Featured first</option><option value="low" data-t="low">Price: low to high</option><option value="high" data-t="high">Price: high to low</option></select>
+<select id="budget"><option value="0" data-t="anyBudget">Any budget</option><option value="25">≤ €25</option><option value="50">≤ €50</option><option value="100">≤ €100</option><option value="250">≤ €250</option><option value="500">≤ €500</option></select>
+</div>
+<div class="chips" id="chips"><button class="chip active" data-cat="all" data-t="all">All</button><button class="chip" data-cat="tech" data-t="tech">Technology</button><button class="chip" data-cat="home" data-t="home">Home</button><button class="chip" data-cat="fashion" data-t="fashion">Fashion</button><button class="chip" data-cat="fitness" data-t="fitness">Fitness</button></div>
+<div class="grid" id="productGrid" aria-live="polite"></div>
+</section>
 
-  <!-- Main Body -->
-  <main class="w-full max-w-4xl mx-auto my-6 space-y-6">
+<section class="wrap section" id="assistant">
+<div class="head"><div><h2 data-t="assistant">Ventro shopping assistant</h2><p data-t="assistantDesc">Describe what you want and find matching sample listings.</p></div></div>
+<div class="panel">
+<label for="prompt" data-t="ask">What are you looking for?</label>
+<textarea id="prompt" data-ph="promptPH" placeholder="Example: wireless headphones under 50 euros"></textarea>
+<div class="actions"><button class="btn" id="smartSearch" data-t="smartSearch">Smart search</button><button class="btn secondary" id="clearPrompt" data-t="clear">Clear</button></div>
+<div id="assistantResult" class="result" aria-live="polite"></div>
+<div class="notice" data-t="aiNotice">Demo assistant only. It searches the sample listings; a real AI model is not connected yet.</div>
+</div>
+</section>
 
-    <!-- Hero Title -->
-    <div class="text-center space-y-2 py-2">
-      <span class="inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">
-        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-        <span id="txtBadge">منصة التجارة والذكاء الاصطناعي الأقوى</span>
-      </span>
-      <h2 id="txtHeroHeader" class="text-2xl md:text-4xl font-black text-white">
-        مستقبل التجارة والتسوق الذكي
-      </h2>
-      <p id="txtHeroSub" class="text-gray-400 text-xs max-w-md mx-auto">
-        منصتك المتكاملة للبيع، الشراء، والتنبؤ بالأسعار بذكاء تام.
-      </p>
-    </div>
+<section class="wrap section" id="features">
+<div class="head"><div><h2 data-t="why">More than a store</h2><p data-t="whyDesc">A foundation for a global commerce experience.</p></div></div>
+<div class="features">
+<div class="feature"><strong>🧠</strong><h3 data-t="f1">Smart discovery</h3><p data-t="f1d">Find products matching your description and budget.</p></div>
+<div class="feature"><strong>🌍</strong><h3 data-t="f2">Global experience</h3><p data-t="f2d">A multilingual, multi-currency interface.</p></div>
+<div class="feature"><strong>🔖</strong><h3 data-t="f3">Personal wishlist</h3><p data-t="f3d">Save products and revisit them later.</p></div>
+</div>
+</section>
 
-    <!-- AI Chat System -->
-    <div class="gradient-border rounded-2xl p-4 shadow-2xl space-y-3 glass-card">
-      <div class="flex items-center justify-between text-xs font-bold text-blue-400 border-b border-gray-800 pb-2">
-        <div class="flex items-center gap-2">
-          <span>🤖</span> <span id="txtAiTitle">مساعد فينترو الذكي (Gemini Ready)</span>
-        </div>
-        <span class="text-[10px] text-green-400">متصل 🟢</span>
-      </div>
+<section class="wrap section hidden" id="addSection">
+<div class="head"><div><h2 data-t="addTitle">Add a sample product</h2><p data-t="localOnly">Products are saved in this browser only.</p></div><button class="btn secondary" id="hideForm" data-t="close">Close</button></div>
+<form class="panel" id="productForm"><div class="formgrid">
+<input class="full" name="name" required maxlength="100" data-ph="namePH" placeholder="Product name">
+<select name="category"><option value="tech" data-t="tech">Technology</option><option value="home" data-t="home">Home</option><option value="fashion" data-t="fashion">Fashion</option><option value="fitness" data-t="fitness">Fitness</option></select>
+<input name="price" type="number" min=".01" step=".01" required data-ph="pricePH" placeholder="Price in EUR">
+<input class="full" name="image" type="url" data-ph="imagePH" placeholder="HTTPS image URL (optional)">
+<textarea class="full" name="description" maxlength="300" data-ph="descPH" placeholder="Product description"></textarea>
+<button class="btn full" type="submit" data-t="save">Save product</button>
+</div></form>
+</section>
 
-      <div id="chatBox" class="bg-gray-950 rounded-xl p-3 border border-gray-800 text-xs space-y-2 max-h-40 overflow-y-auto">
-        <div class="bg-blue-900/30 border border-blue-500/30 text-blue-200 p-2.5 rounded-lg max-w-[90%]">
-          مرحباً يا <strong>عمار</strong>! كيف يمكنني مساعدتك في تجاراتك أو البحث عن المنتجات اليوم؟
-        </div>
-      </div>
+<section class="wrap section" id="trust">
+<div class="head"><div><h2 data-t="trust">Trust and transparency</h2><p data-t="trustDesc">Useful technology without misleading promises.</p></div></div>
+<div class="features">
+<div class="feature"><strong>🔐</strong><h3 data-t="privacy">Privacy first</h3><p data-t="privacyD">Do not enter sensitive or payment information in this demo.</p></div>
+<div class="feature"><strong>💳</strong><h3 data-t="payments">Future payments</h3><p data-t="paymentsD">PayPal and bank cards are planned integrations, not enabled here.</p></div>
+<div class="feature"><strong>✓</strong><h3 data-t="clearStatus">Clear status</h3><p data-t="clearStatusD">Sample listings and prices are not confirmed purchase offers.</p></div>
+</div>
+</section>
+</main>
 
-      <div class="flex gap-2">
-        <input id="userInput" type="text" placeholder="اكتب سؤالك للذكاء الاصطناعي..." class="w-full bg-gray-900 border border-gray-800 rounded-xl px-3 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-purple-500">
-        <button onclick="sendAI()" id="btnSend" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90 text-white font-bold px-4 py-2.5 rounded-xl text-xs transition shadow-lg">
-          إرسال
-        </button>
-      </div>
-    </div>
+<footer class="footer"><div class="wrap"><div class="brand"><div class="logo">V</div><div>VENTRO <span>AI</span></div></div><p data-t="footer">Demo prototype. No real payments, live inventory, or shared database.</p>© <span id="year"></span> Ventro AI</div></footer>
 
-    <!-- Products Grid -->
-    <div class="space-y-3">
-      <div class="flex justify-between items-center">
-        <h3 id="txtProductsTitle" class="text-base font-bold text-white flex items-center gap-2">
-          🛍️ المنتجات والسلع المعروضة
-        </h3>
-        <button onclick="addNewProduct()" id="btnAddProduct" class="text-xs bg-blue-600/20 border border-blue-500/30 text-blue-400 hover:bg-blue-600 hover:text-white px-3 py-1.5 rounded-lg transition font-bold">
-          + إضافة منتج جديد
-        </button>
-      </div>
+<div class="modalbg" id="cartModal"><div class="modal"><div class="modalhead"><h2 data-t="cart">Your demo cart</h2><button class="btn secondary" data-close="cartModal">✕</button></div><div id="cartContent"></div><div class="notice" data-t="paymentNotice">Checkout is a demo. No payment will be taken.</div><div class="actions"><button class="btn" id="demoPay">PayPal</button><button class="btn secondary" id="demoCard">Visa / Mastercard</button></div></div></div>
+<div class="modalbg" id="wishModal"><div class="modal"><div class="modalhead"><h2 data-t="wishlist">Wishlist</h2><button class="btn secondary" data-close="wishModal">✕</button></div><div id="wishContent"></div></div></div>
+<div class="modalbg" id="detailModal"><div class="modal"><div class="modalhead"><h2 id="detailTitle">Product</h2><button class="btn secondary" data-close="detailModal">✕</button></div><div id="detailContent"></div></div></div>
+<div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
 
-      <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <!-- Item 1 -->
-        <div class="glass-card rounded-xl p-3.5 space-y-3 hover:border-blue-500/50 transition">
-          <div class="h-36 bg-gray-900 rounded-lg flex items-center justify-center text-4xl border border-gray-800 relative">
-            🧥
-            <span class="absolute top-2 right-2 bg-blue-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">مميز</span>
-          </div>
-          <div>
-            <h4 class="font-bold text-white text-sm">سترة شتوية فاخرة</h4>
-            <p class="text-[11px] text-gray-400">تصميم راقٍ ومريح للغاية لجميع الأوقات.</p>
-          </div>
-          <div class="flex justify-between items-center pt-2 border-t border-gray-800">
-            <span id="price1" class="text-sm font-black text-green-400">4,500 دج</span>
-            <button onclick="buyProduct('سترة شتوية فاخرة')" class="bg-green-600 hover:bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition shadow-lg flex items-center gap-1">
-              شراء الآن 🛒
-            </button>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="glass-card rounded-xl p-3.5 space-y-3 hover:border-purple-500/50 transition">
-          <div class="h-36 bg-gray-900 rounded-lg flex items-center justify-center text-4xl border border-gray-800 relative">
-            ⌚
-            <span class="absolute top-2 right-2 bg-purple-600 text-white text-[9px] font-bold px-2 py-0.5 rounded-full">ذكي</span>
-          </div>
-          <div>
-            <h4 class="font-bold text-white text-sm">ساعة Ventro الذكية</h4>
-            <p class="text-[11px] text-gray-400">تدعم الذكاء الاصطناعي وتتبع اللياقة بدقة.</p>
-          </div>
-          <div class="flex justify-between items-center pt-2 border-t border-gray-800">
-            <span id="price2" class="text-sm font-black text-purple-400">8,900 دج</span>
-            <button onclick="buyProduct('ساعة Ventro الذكية')" class="bg-green-600 hover:bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition shadow-lg flex items-center gap-1">
-              شراء الآن 🛒
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="w-full max-w-4xl mx-auto text-center py-3 border-t border-gray-800/80 text-[11px] text-gray-500 glass-card rounded-xl">
-    © 2026 Ventro AI V3.0 — تطوير وإشراف المؤسس <span class="text-blue-400 font-bold">عمار سعيد حداد</span>
-  </footer>
-
-  <!-- App Script -->
-  <script>
-    function sendAI() {
-      const input = document.getElementById('userInput');
-      const chatBox = document.getElementById('chatBox');
-      if (input.value.trim() !== '') {
-        const userMsg = document.createElement('div');
-        userMsg.className = 'bg-gray-800 border border-gray-700 text-white p-2 rounded-lg max-w-[85%] mr-auto text-left';
-        userMsg.innerText = input.value;
-        chatBox.appendChild(userMsg);
-
-        const aiMsg = document.createElement('div');
-        aiMsg.className = 'bg-blue-900/30 border border-blue-500/30 text-blue-200 p-2 rounded-lg max-w-[85%]';
-        aiMsg.innerText = "أهلاً عمار! جاري معالجة طلبك: '" + input.value + "'";
-        setTimeout(() => chatBox.appendChild(aiMsg), 500);
-        
-        input.value = '';
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
-    }
-
-    function buyProduct(productName) {
-      alert("تم اختيار: " + productName + "\nسيتم تحويلك الآن لتأكيد الشراء عبر الواتساب مع المؤسس عمار!");
-      window.open('https://wa.me/?text=' + encodeURIComponent('مرحباً عمار، أريد شراء المنتج: ' + productName), '_blank');
-    }
-
-    function addNewProduct() {
-      const name = prompt("أدخل اسم السلعة الجديدة:");
-      const price = prompt("أدخل سعر السلعة (بالدينار):");
-      if (name && price) {
-        const grid = document.getElementById('productsGrid');
-        const newCard = document.createElement('div');
-        newCard.className = 'glass-card rounded-xl p-3.5 space-y-3 border border-blue-500/40';
-        newCard.innerHTML = `
-          <div class="h-36 bg-gray-900 rounded-lg flex items-center justify-center text-4xl border border-gray-800 relative">📦</div>
-          <div>
-            <h4 class="font-bold text-white text-sm">${name}</h4>
-            <p class="text-[11px] text-gray-400">منتج جديد تم إضافته حديثاً للمنصة.</p>
-          </div>
-          <div class="flex justify-between items-center pt-2 border-t border-gray-800">
-            <span class="text-sm font-black text-green-400">${price} دج</span>
-            <button onclick="buyProduct('${name}')" class="bg-green-600 hover:bg-green-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">شراء الآن 🛒</button>
-          </div>
-        `;
-        grid.appendChild(newCard);
-      }
-    }
-
-    function updateCurrency() {
-      const curr = document.getElementById('currSelect').value;
-      const p1 = document.getElementById('price1');
-      const p2 = document.getElementById('price2');
-      if (curr === 'USD') { p1.innerText = '$30'; p2.innerText = '$60'; }
-      else if (curr === 'EUR') { p1.innerText = '28 €'; p2.innerText = '55 €'; }
-      else { p1.innerText = '4,500 دج'; p2.innerText = '8,900 دج'; }
-    }
-
-    function updateLang() {
-      const lang = document.getElementById('langSelect').value;
-      if (lang === 'en') {
-        document.getElementById('txtHeroHeader').innerText = "The Future of Smart E-Commerce";
-        document.getElementById('txtHeroSub').innerText = "Your all-in-one platform for buying, selling & AI predictions.";
-        document.getElementById('txtProductsTitle').innerText = "🛍️ Available Products";
-        document.getElementById('btnAddProduct').innerText = "+ Add New Product";
-        document.getElementById('btnSend').innerText = "Send";
-      } else if (lang === 'fr') {
-        document.getElementById('txtHeroHeader').innerText = "L'Avenir du E-Commerce Intelligent";
-        document.getElementById('txtHeroSub').innerText = "Votre plateforme intégrée pour acheter, vendre et prédire.";
-        document.getElementById('txtProductsTitle').innerText = "🛍️ Produits Disponibles";
-        document.getElementById('btnAddProduct').innerText = "+ Ajouter un produit";
-        document.getElementById('btnSend').innerText = "Envoyer";
-      } else {
-        document.getElementById('txtHeroHeader').innerText = "مستقبل التجارة والتسوق الذكي";
-        document.getElementById('txtHeroSub').innerText = "منصتك المتكاملة للبيع، الشراء، والتنبؤ بالأسعار بذكاء تام.";
-        document.getElementById('txtProductsTitle').innerText = "🛍️ المنتجات والسلع المعروضة";
-        document.getElementById('btnAddProduct').innerText = "+ إضافة منتج جديد";
-        document.getElementById('btnSend').innerText = "إرسال";
-      }
-    }
-  </script>
-
+<script>
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const dictionaries={
+en:{dir:"ltr",eyebrow:"✦ The next generation of smart shopping",line1:"Discover better.",line2:"Shop smarter.",heroDesc:"Discover products, compare options, and find what fits your needs and budget.",explore:"Explore products ↗",tryAI:"Try shopping assistant",multi:"6 languages · 4 currencies · Smart discovery",future:"Shopping from the future",futureDesc:"Discover. Compare. Choose what fits.",languages:"Languages",currencies:"Currencies",discovery:"Discovery",products:"Discover products",productDesc:"Explore sample products in the Ventro demo.",addProduct:"+ Add product",searchPH:"Search products...",featured:"Featured first",low:"Price: low to high",high:"Price: high to low",anyBudget:"Any budget",all:"All",tech:"Technology",home:"Home",fashion:"Fashion",fitness:"Fitness",assistant:"Ventro shopping assistant",assistantDesc:"Describe what you want and find matching sample listings.",ask:"What are you looking for?",promptPH:"Example: wireless headphones under 50 euros",smartSearch:"Smart search",clear:"Clear",aiNotice:"Demo assistant only. It searches sample listings; a real AI model is not connected yet.",why:"More than a store",whyDesc:"A foundation for a global commerce experience.",f1:"Smart discovery",f1d:"Find products matching your description and budget.",f2:"Global experience",f2d:"A multilingual, multi-currency interface.",f3:"Personal wishlist",f3d:"Save products and revisit them later.",addTitle:"Add a sample product",localOnly:"Products are saved in this browser only.",close:"Close",namePH:"Product name",pricePH:"Price in EUR",imagePH:"HTTPS image URL (optional)",descPH:"Product description",save:"Save product",trust:"Trust and transparency",trustDesc:"Useful technology without misleading promises.",privacy:"Privacy first",privacyD:"Do not enter sensitive or payment information in this demo.",payments:"Future payments",paymentsD:"PayPal and bank cards are planned integrations, not enabled here.",clearStatus:"Clear status",clearStatusD:"Sample listings and prices are not confirmed purchase offers.",footer:"Demo prototype. No real payments, live inventory, or shared database.",cart:"Your demo cart",paymentNotice:"Checkout is a demo. No payment will be taken.",wishlist:"Wishlist",sample:"DEMO",details:"Details",addToCart:"Add to cart",noProducts:"No matching products found.",saved:"Added to wishlist.",removed:"Removed from wishlist.",cartAdded:"Added to cart.",needPrompt:"Describe a product first.",noMatch:"No direct match found. Try another description.",matches:"Products that may match your request:",emptyCart:"Your cart is empty.",emptyWish:"Your wishlist is empty.",total:"Total",remove:"Remove",demoPay:"Payment is not enabled in this prototype.",savedProduct:"Product saved in this browser.",badImage:"Image URL must use HTTPS.",badPrice:"Enter a valid product name and positive price.",payNote:"Payment demo only — no money was charged.",seller:"Seller",demoLabel:"Sample listing",description:"Description",within:"Sample product",wishAdded:"Saved",notFound:"Product not found."},
+ar:{dir:"rtl",eyebrow:"✦ الجيل القادم من التسوق الذكي",line1:"اكتشف الأفضل.",line2:"تسوّق بذكاء أكبر.",heroDesc:"اكتشف المنتجات وقارن الخيارات واعثر على ما يناسب احتياجاتك وميزانيتك.",explore:"اكتشف المنتجات ↗",tryAI:"جرّب مساعد التسوق",multi:"6 لغات · 4 عملات · اكتشاف ذكي",future:"تجربة تسوق من المستقبل",futureDesc:"اكتشف. قارن. اختر ما يناسبك.",languages:"لغات",currencies:"عملات",discovery:"اكتشاف ذكي",products:"اكتشف المنتجات",productDesc:"منتجات تجريبية لاستكشاف المنصة.",addProduct:"+ أضف منتجًا",searchPH:"ابحث عن منتج...",featured:"المميزة أولًا",low:"السعر: من الأقل",high:"السعر: من الأعلى",anyBudget:"كل الميزانيات",all:"الكل",tech:"تقنية",home:"المنزل",fashion:"الأزياء",fitness:"الرياضة",assistant:"مساعد Ventro للتسوق",assistantDesc:"صف ما تبحث عنه للعثور على منتجات مناسبة.",ask:"ما المنتج الذي تبحث عنه؟",promptPH:"مثال: سماعات لاسلكية بأقل من 50 يورو",smartSearch:"بحث ذكي",clear:"مسح",aiNotice:"المساعد تجريبي ويبحث في المنتجات الموجودة هنا؛ لم يتم ربط ذكاء اصطناعي حقيقي بعد.",why:"أكثر من مجرد متجر",whyDesc:"أساس قابل للتطوير نحو تجارة عالمية.",f1:"اكتشاف ذكي",f1d:"ابحث عن منتجات تناسب وصفك وميزانيتك.",f2:"تجربة عالمية",f2d:"واجهة متعددة اللغات والعملات.",f3:"قائمة المفضلة",f3d:"احفظ المنتجات للعودة إليها لاحقًا.",addTitle:"إضافة منتج تجريبي",localOnly:"تُحفظ المنتجات في هذا المتصفح فقط.",close:"إغلاق",namePH:"اسم المنتج",pricePH:"السعر باليورو",imagePH:"رابط صورة HTTPS (اختياري)",descPH:"وصف المنتج",save:"حفظ المنتج",trust:"الثقة والشفافية",trustDesc:"تقنية مفيدة دون وعود مضللة.",privacy:"الخصوصية أولًا",privacyD:"لا تدخل بيانات حساسة أو معلومات دفع في هذه النسخة.",payments:"الدفع مستقبلًا",paymentsD:"PayPal والبطاقات مخطط لربطها لاحقًا وليست مفعّلة هنا.",clearStatus:"وضوح الحالة",clearStatusD:"المنتجات والأسعار تجريبية وليست عروض شراء مؤكدة.",footer:"نموذج تجريبي. لا توجد مدفوعات حقيقية أو قاعدة بيانات مشتركة.",cart:"سلة تجريبية",paymentNotice:"الدفع تجريبي ولن يتم سحب أي أموال.",wishlist:"المفضلة",sample:"تجريبي",details:"التفاصيل",addToCart:"أضف للسلة",noProducts:"لا توجد منتجات مطابقة.",saved:"أُضيف إلى المفضلة.",removed:"أُزيل من المفضلة.",cartAdded:"أُضيف إلى السلة.",needPrompt:"اكتب وصف المنتج أولًا.",noMatch:"لم أعثر على تطابق مباشر. جرّب وصفًا آخر.",matches:"منتجات قد تناسب طلبك:",emptyCart:"السلة فارغة.",emptyWish:"قائمة المفضلة فارغة.",total:"المجموع",remove:"حذف",demoPay:"الدفع غير مفعّل في هذا النموذج.",savedProduct:"حُفظ المنتج في هذا المتصفح.",badImage:"يجب أن يبدأ رابط الصورة بـ HTTPS.",badPrice:"أدخل اسمًا صحيحًا وسعرًا موجبًا.",payNote:"دفع تجريبي فقط — لم تُخصم أموال.",seller:"البائع",demoLabel:"منتج تجريبي",description:"الوصف",within:"منتج تجريبي",wishAdded:"تم الحفظ",notFound:"المنتج غير موجود."},
+fr:{dir:"ltr",eyebrow:"✦ La nouvelle génération du shopping intelligent",line1:"Découvrez mieux.",line2:"Achetez plus intelligemment.",heroDesc:"Découvrez des produits, comparez les options et trouvez ce qui correspond à vos besoins et à votre budget.",explore:"Explorer les produits ↗",tryAI:"Essayer l’assistant",multi:"6 langues · 4 devises · Découverte intelligente",future:"Le shopping du futur",futureDesc:"Découvrez. Comparez. Choisissez.",languages:"Langues",currencies:"Devises",discovery:"Découverte",products:"Découvrir les produits",productDesc:"Produits de démonstration.",addProduct:"+ Ajouter un produit",searchPH:"Rechercher...",featured:"En vedette",low:"Prix croissant",high:"Prix décroissant",anyBudget:"Tous les budgets",all:"Tout",tech:"Technologie",home:"Maison",fashion:"Mode",fitness:"Sport",assistant:"Assistant shopping Ventro",assistantDesc:"Décrivez ce que vous recherchez.",ask:"Quel produit recherchez-vous ?",promptPH:"Exemple : casque sans fil à moins de 50 euros",smartSearch:"Recherche intelligente",clear:"Effacer",aiNotice:"Assistant de démonstration uniquement ; aucune IA externe n’est connectée.",why:"Plus qu’une boutique",whyDesc:"Une base pour le commerce mondial.",f1:"Découverte intelligente",f1d:"Trouvez des produits adaptés à votre budget.",f2:"Expérience mondiale",f2d:"Interface multilingue et multidevise.",f3:"Liste personnelle",f3d:"Enregistrez des produits pour plus tard.",addTitle:"Ajouter un produit démo",localOnly:"Enregistré dans ce navigateur uniquement.",close:"Fermer",namePH:"Nom du produit",pricePH:"Prix en EUR",imagePH:"URL d’image HTTPS (facultatif)",descPH:"Description",save:"Enregistrer",trust:"Confiance et transparence",trustDesc:"Une technologie utile sans fausses promesses.",privacy:"Confidentialité",privacyD:"Ne saisissez aucune donnée sensible ou de paiement.",payments:"Paiements futurs",paymentsD:"PayPal et les cartes ne sont pas encore activés.",clearStatus:"Transparence",clearStatusD:"Produits et prix de démonstration.",footer:"Prototype démo sans paiement réel ni base de données partagée.",cart:"Panier démo",paymentNotice:"Aucun paiement ne sera effectué.",wishlist:"Favoris",sample:"DÉMO",details:"Détails",addToCart:"Ajouter au panier",noProducts:"Aucun produit correspondant.",saved:"Ajouté aux favoris.",removed:"Retiré des favoris.",cartAdded:"Ajouté au panier.",needPrompt:"Décrivez d’abord un produit.",noMatch:"Aucune correspondance directe.",matches:"Produits susceptibles de convenir :",emptyCart:"Panier vide.",emptyWish:"Aucun favori.",total:"Total",remove:"Retirer",demoPay:"Paiement non activé.",savedProduct:"Produit enregistré dans ce navigateur.",badImage:"L’image doit utiliser HTTPS.",badPrice:"Saisissez un nom et un prix valide.",payNote:"Démo uniquement — aucun paiement effectué.",seller:"Vendeur",demoLabel:"Produit démo",description:"Description",within:"Produit démo",wishAdded:"Enregistré",notFound:"Produit introuvable."},
+es:{dir:"ltr",eyebrow:"✦ La nueva generación de compras inteligentes",line1:"Descubre lo mejor.",line2:"Compra de forma más inteligente.",heroDesc:"Descubre productos, compara opciones y encuentra lo que se adapta a tus necesidades y presupuesto.",explore:"Explorar productos ↗",tryAI:"Probar el asistente",multi:"6 idiomas · 4 monedas · Búsqueda inteligente",future:"Compras del futuro",futureDesc:"Descubre. Compara. Elige.",languages:"Idiomas",currencies:"Monedas",discovery:"Descubrimiento",products:"Descubrir productos",productDesc:"Productos de demostración.",addProduct:"+ Añadir producto",searchPH:"Buscar productos...",featured:"Destacados",low:"Precio: menor a mayor",high:"Precio: mayor a menor",anyBudget:"Cualquier presupuesto",all:"Todo",tech:"Tecnología",home:"Hogar",fashion:"Moda",fitness:"Deporte",assistant:"Asistente de compras Ventro",assistantDesc:"Describe lo que buscas.",ask:"¿Qué producto buscas?",promptPH:"Ejemplo: auriculares por menos de 50 euros",smartSearch:"Búsqueda inteligente",clear:"Borrar",aiNotice:"Asistente de demostración; todavía no hay una IA externa conectada.",why:"Más que una tienda",whyDesc:"Una base para el comercio global.",f1:"Descubrimiento inteligente",f1d:"Encuentra productos según tu presupuesto.",f2:"Experiencia global",f2d:"Interfaz multilingüe y multidivisa.",f3:"Lista personal",f3d:"Guarda productos para más tarde.",addTitle:"Añadir producto de demostración",localOnly:"Se guarda solo en este navegador.",close:"Cerrar",namePH:"Nombre del producto",pricePH:"Precio en EUR",imagePH:"URL de imagen HTTPS (opcional)",descPH:"Descripción",save:"Guardar producto",trust:"Confianza y transparencia",trustDesc:"Tecnología útil sin falsas promesas.",privacy:"Privacidad",privacyD:"No introduzcas datos sensibles ni de pago.",payments:"Pagos futuros",paymentsD:"PayPal y las tarjetas aún no están activados.",clearStatus:"Transparencia",clearStatusD:"Los productos y precios son ejemplos.",footer:"Prototipo sin pagos reales ni base de datos compartida.",cart:"Carrito de demostración",paymentNotice:"No se realizará ningún pago.",wishlist:"Favoritos",sample:"DEMO",details:"Detalles",addToCart:"Añadir al carrito",noProducts:"No hay productos coincidentes.",saved:"Añadido a favoritos.",removed:"Eliminado de favoritos.",cartAdded:"Añadido al carrito.",needPrompt:"Describe primero un producto.",noMatch:"No se encontró coincidencia directa.",matches:"Productos que podrían interesarte:",emptyCart:"Carrito vacío.",emptyWish:"No hay favoritos.",total:"Total",remove:"Quitar",demoPay:"Pago no activado.",savedProduct:"Producto guardado en este navegador.",badImage:"La imagen debe usar HTTPS.",badPrice:"Introduce un nombre y un precio válido.",payNote:"Solo demostración; no se ha cobrado nada.",seller:"Vendedor",demoLabel:"Producto demo",description:"Descripción",within:"Producto demo",wishAdded:"Guardado",notFound:"Producto no encontrado."},
+zh:{dir:"ltr",eyebrow:"✦ 智能购物新时代",line1:"发现更好的选择。",line2:"购物更聪明。",heroDesc:"发现商品、比较选项，找到符合需求与预算的产品。",explore:"探索商品 ↗",tryAI:"试用购物助手",multi:"六种语言 · 四种货币 · 智能发现",future:"未来购物体验",futureDesc:"发现、比较、选择。",languages:"语言",currencies:"货币",discovery:"智能发现",products:"探索商品",productDesc:"以下为演示商品。",addProduct:"+ 添加商品",searchPH:"搜索商品...",featured:"推荐优先",low:"价格从低到高",high:"价格从高到低",anyBudget:"不限预算",all:"全部",tech:"科技",home:"家居",fashion:"时尚",fitness:"运动",assistant:"Ventro 购物助手",assistantDesc:"描述你要寻找的商品。",ask:"你在寻找什么商品？",promptPH:"例如：50 欧元以内的无线耳机",smartSearch:"智能搜索",clear:"清除",aiNotice:"此助手仅用于演示，尚未连接真实 AI。",why:"不只是商店",whyDesc:"迈向全球购物体验的基础。",f1:"智能发现",f1d:"根据描述和预算寻找商品。",f2:"全球体验",f2d:"多语言、多货币界面。",f3:"个人收藏",f3d:"保存商品以便稍后查看。",addTitle:"添加演示商品",localOnly:"商品仅保存在当前浏览器中。",close:"关闭",namePH:"商品名称",pricePH:"欧元价格",imagePH:"HTTPS 图片链接（可选）",descPH:"商品描述",save:"保存商品",trust:"信任与透明",trustDesc:"不作误导性承诺。",privacy:"隐私优先",privacyD:"请勿输入敏感信息或付款信息。",payments:"未来支付",paymentsD:"PayPal 和银行卡尚未启用。",clearStatus:"状态透明",clearStatusD:"商品和价格仅供演示。",footer:"演示原型，不支持真实付款或共享数据库。",cart:"演示购物车",paymentNotice:"不会进行任何真实付款。",wishlist:"收藏",sample:"演示",details:"详情",addToCart:"加入购物车",noProducts:"没有符合条件的商品。",saved:"已加入收藏。",removed:"已取消收藏。",cartAdded:"已加入购物车。",needPrompt:"请先描述商品。",noMatch:"未找到直接匹配。",matches:"可能符合需求的商品：",emptyCart:"购物车为空。",emptyWish:"暂无收藏。",total:"总计",remove:"移除",demoPay:"支付功能尚未启用。",savedProduct:"商品已保存在当前浏览器。",badImage:"图片链接必须使用 HTTPS。",badPrice:"请输入有效名称和价格。",payNote:"仅为演示，没有扣款。",seller:"卖家",demoLabel:"演示商品",description:"描述",within:"演示商品",wishAdded:"已保存",notFound:"未找到商品。"},
+ru:{dir:"ltr",eyebrow:"✦ Новое поколение умных покупок",line1:"Находите лучшее.",line2:"Покупайте умнее.",heroDesc:"Открывайте товары, сравнивайте варианты и выбирайте то, что соответствует вашим потребностям и бюджету.",explore:"Смотреть товары ↗",tryAI:"Попробовать помощника",multi:"6 языков · 4 валюты · Умный поиск",future:"Покупки будущего",futureDesc:"Находите. Сравнивайте. Выбирайте.",languages:"Языки",currencies:"Валюты",discovery:"Поиск",products:"Откройте товары",productDesc:"Демонстрационные товары.",addProduct:"+ Добавить товар",searchPH:"Поиск товаров...",featured:"Сначала рекомендуемые",low:"Цена: сначала дешевле",high:"Цена: сначала дороже",anyBudget:"Любой бюджет",all:"Все",tech:"Технологии",home:"Дом",fashion:"Мода",fitness:"Спорт",assistant:"Помощник Ventro",assistantDesc:"Опишите товар, который ищете.",ask:"Какой товар вы ищете?",promptPH:"Например: наушники до 50 евро",smartSearch:"Умный поиск",clear:"Очистить",aiNotice:"Демонстрационный помощник; внешняя модель ИИ не подключена.",why:"Больше, чем магазин",whyDesc:"Основа для глобальной торговли.",f1:"Умный поиск",f1d:"Подбор товаров по описанию и бюджету.",f2:"Глобальный опыт",f2d:"Интерфейс с разными языками и валютами.",f3:"Избранное",f3d:"Сохраняйте товары на потом.",addTitle:"Добавить демонстрационный товар",localOnly:"Сохраняется только в этом браузере.",close:"Закрыть",namePH:"Название товара",pricePH:"Цена в EUR",imagePH:"HTTPS-ссылка на изображение",descPH:"Описание товара",save:"Сохранить",trust:"Доверие и прозрачность",trustDesc:"Без вводящих в заблуждение обещаний.",privacy:"Конфиденциальность",privacyD:"Не вводите конфиденциальные или платёжные данные.",payments:"Будущие платежи",paymentsD:"PayPal и карты пока не активированы.",clearStatus:"Прозрачность",clearStatusD:"Товары и цены приведены для демонстрации.",footer:"Демо-прототип без реальных платежей и общей базы данных.",cart:"Демонстрационная корзина",paymentNotice:"Реальная оплата не выполняется.",wishlist:"Избранное",sample:"ДЕМО",details:"Подробнее",addToCart:"В корзину",noProducts:"Подходящие товары не найдены.",saved:"Добавлено в избранное.",removed:"Удалено из избранного.",cartAdded:"Добавлено в корзину.",needPrompt:"Сначала опишите товар.",noMatch:"Совпадений не найдено.",matches:"Товары, которые могут подойти:",emptyCart:"Корзина пуста.",emptyWish:"Избранного пока нет.",total:"Итого",remove:"Удалить",demoPay:"Оплата не активирована.",savedProduct:"Товар сохранён в этом браузере.",badImage:"Ссылка должна использовать HTTPS.",badPrice:"Введите название и правильную цену.",payNote:"Демонстрация — деньги не списаны.",seller:"Продавец",demoLabel:"Демо-товар",description:"Описание",within:"Демо-товар",wishAdded:"Сохранено",notFound:"Товар не найден."}
+};
+const currencyInfo={EUR:{rate:1,locale:"de-DE"},DZD:{rate:150,locale:"fr-DZ"},USD:{rate:1.08,locale:"en-US"},GBP:{rate:.84,locale:"en-GB"}};
+const starter=[
+{id:"p1",name:"Aurora Wireless Headphones",desc:"Wireless audio · Comfortable everyday design",category:"tech",price:39.9,emoji:"🎧",image:"https://images.unsplash.com/photo-1505740420928-5e560c06d30b?auto=format&fit=crop&w=800&q=80",keywords:"headphones audio wireless سماعات casque auriculares наушники 耳机"},
+{id:"p2",name:"Nova Smart Watch",desc:"Smart features · Modern everyday style",category:"tech",price:69.9,emoji:"⌚",image:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",keywords:"watch smart montre reloj часы 手表"},
+{id:"p3",name:"Minimal Home Lamp",desc:"Minimal lighting · Contemporary home decor",category:"home",price:28.5,emoji:"💡",image:"https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80",keywords:"lamp light home maison lámpara лампа 灯"},
+{id:"p4",name:"Urban Everyday Backpack",desc:"Practical storage · Everyday carry",category:"fashion",price:45,emoji:"🎒",image:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",keywords:"bag backpack fashion sac mochila рюкзак 背包"},
+{id:"p5",name:"Active Training Shoes",desc:"Sport-inspired design · Daily movement",category:"fitness",price:59.9,emoji:"👟",image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",keywords:"shoes sport fitness chaussures zapatillas кроссовки 运动鞋"},
+{id:"p6",name:"Smart Desk Accessory",desc:"A clean setup for work and study",category:"home",price:19.9,emoji:"🖥️",image:"https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",keywords:"desk computer office bureau escritorio компьютер 桌面"}
+];
+let products=[...starter],wishlist=[],cart=[],lang="en",currency="EUR",category="all",showWishlistOnly=false;
+function t(k){return dictionaries[lang]?.[k]??dictionaries.en[k]??k}
+function esc(v){return String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function read(key,fall){try{const v=localStorage.getItem(key);return v?JSON.parse(v):fall}catch{return fall}}
+function save(){try{localStorage.setItem("ventro-products",JSON.stringify(products.filter(p=>p.custom)));localStorage.setItem("ventro-wishlist",JSON.stringify(wishlist));localStorage.setItem("ventro-cart",JSON.stringify(cart));return true}catch{return false}}
+function load(){const extra=read("ventro-products",[]);if(Array.isArray(extra))products=[...starter,...extra.filter(p=>p&&p.custom&&typeof p.name==="string"&&Number.isFinite(Number(p.price))&&!starter.some(s=>s.id===p.id))];wishlist=read("ventro-wishlist",[]).filter(id=>products.some(p=>p.id===id));cart=read("ventro-cart",[]).filter(id=>products.some(p=>p.id===id))}
+function formatPrice(eur){try{return new Intl.NumberFormat(currencyInfo[currency].locale,{style:"currency",currency,maximumFractionDigits:2}).format(Number(eur)*currencyInfo[currency].rate)}catch{return (Number(eur)*currencyInfo[currency].rate).toFixed(2)+" "+currency}}
+function applyLanguage(){const d=dictionaries[lang];document.documentElement.lang=lang;document.documentElement.dir=d.dir;$$("[data-t]").forEach(el=>{const v=t(el.dataset.t);if(v)el.textContent=v});$$("[data-ph]").forEach(el=>el.placeholder=t(el.dataset.ph));render()}
+function toast(msg){const el=$("#toast");el.textContent=msg;el.classList.remove("hidden");clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.add("hidden"),2500)}
+function render(){const q=$("#search").value.trim().toLowerCase(),budget=Number($("#budget").value)||0,sort=$("#sort").value;let list=products.filter(p=>{const hay=[p.name,p.desc,p.keywords,p.category].join(" ").toLowerCase();return(category==="all"||p.category===category)&&(!q||hay.includes(q))&&(!budget||p.price<=budget)&&(!showWishlistOnly||wishlist.includes(p.id))});if(sort==="low")list.sort((a,b)=>a.price-b.price);if(sort==="high")list.sort((a,b)=>b.price-a.price);if(sort==="featured")list.sort((a,b)=>Number(Boolean(b.featured))-Number(Boolean(a.featured)));$("#productGrid").innerHTML=list.length?list.map(p=>`<article class="product"><div class="photo">${p.image?`<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">`:''}<div class="emoji" style="${p.image?'display:none':''}">${esc(p.emoji||"🛍️")}</div><span class="tag">${esc(t("sample"))}</span><button class="heart" data-wish="${esc(p.id)}" aria-label="${esc(t("wishlist"))}">${wishlist.includes(p.id)?"♥":"♡"}</button></div><div class="body"><h3>${esc(p.name)}</h3><p>${esc(p.desc||t("within"))}</p><div class="priceRow"><span class="price">${esc(formatPrice(p.price))}</span><span class="muted">★ 4.8</span></div><div class="productActions"><button class="btn secondary" data-details="${esc(p.id)}">${esc(t("details"))}</button><button class="btn" data-add="${esc(p.id)}">＋ ${esc(t("addToCart"))}</button></div><div class="small" style="margin-top:8px">${esc(t("demoLabel"))}</div></div></article>`).join(""):`<div class="empty">${esc(t("noProducts"))}</div>`;$("#wishCount").textContent=wishlist.length;$("#cartCount").textContent=cart.length;renderCart();renderWish()}
+function byId(id){return products.find(p=>p.id===id)}
+function toggleWish(id){if(wishlist.includes(id)){wishlist=wishlist.filter(x=>x!==id);toast(t("removed"))}else{wishlist.push(id);toast(t("saved"))}save();render()}
+function addCart(id){if(!byId(id))return;cart.push(id);save();render();toast(t("cartAdded"))}
+function renderCart(){const el=$("#cartContent");if(!el)return;if(!cart.length){el.innerHTML=`<div class="empty">${esc(t("emptyCart"))}</div>`;return}let sum=0;el.innerHTML=cart.map((id,i)=>{const p=byId(id);if(!p)return"";sum+=p.price;return`<div class="cartline"><span>${esc(p.name)}<br><small class="muted">${esc(formatPrice(p.price))}</small></span><button class="btn secondary" data-remove="${i}">${esc(t("remove"))} ✕</button></div>`}).join("")+`<div class="cartline"><b>${esc(t("total"))}</b><b>${esc(formatPrice(sum))}</b></div>`}
+function renderWish(){const el=$("#wishContent");if(!el)return;const list=wishlist.map(byId).filter(Boolean);el.innerHTML=list.length?list.map(p=>`<div class="cartline"><span>${esc(p.name)}<br><small class="muted">${esc(formatPrice(p.price))}</small></span><button class="btn secondary" data-unwish="${esc(p.id)}">✕</button></div>`).join(""):`<div class="empty">${esc(t("emptyWish"))}</div>`}
+function openModal(id){$("#"+id).classList.add("open");document.body.style.overflow="hidden"}
+function closeModal(id){$("#"+id).classList.remove("open");if(!$(".modalbg.open"))document.body.style.overflow=""}
+function details(id){const p=byId(id);if(!p)return;$("#detailTitle").textContent=p.name;$("#detailContent").innerHTML=`<p>${esc(p.desc||"")}</p><p class="price">${esc(formatPrice(p.price))}</p><p class="muted">${esc(t("demoLabel"))}</p><button class="btn" data-add="${esc(p.id)}">${esc(t("addToCart"))}</button><div class="notice">${esc(t("paymentNotice"))}</div>`;openModal("detailModal")}
+function parseBudget(s){const m=s.match(/(?:under|below|less than|up to|moins de|menos de|أقل من|تحت|до|以内)\s*(\d+(?:[.,]\d+)?)/i)||s.match(/(\d+(?:[.,]\d+)?)\s*(?:€|eur|euros?|usd|dollars?|gbp|دج|دولار|يورو|جنيه)/i);return m?Number(m[1].replace(",",".")):null}
+function assistantSearch(){const q=$("#prompt").value.trim().toLowerCase();if(!q){toast(t("needPrompt"));return}const budget=parseBudget(q);const tokens=q.split(/[^\p{L}\p{N}]+/u).filter(w=>w.length>2&&!["under","below","less","than","with","for","the","and","from","moins","para","con","أقل","من","على","الى","إلى","يورو","دولار","دج","eur","usd","gbp","euros","dollars","wireless"].includes(w));let matches=products.map(p=>({p,score:tokens.reduce((n,w)=>n+([p.name,p.desc,p.keywords,p.category].join(" ").toLowerCase().includes(w)?1:0),0)})).filter(x=>(!budget||x.p.price*currencyInfo[currency].rate<=budget)&&(x.score>0||tokens.length===0)).sort((a,b)=>b.score-a.score).slice(0,5);if(!matches.length&&budget)matches=products.filter(p=>p.price*currencyInfo[currency].rate<=budget).slice(0,3).map(p=>({p,score:0}));const result=$("#assistantResult");result.replaceChildren();if(!matches.length){result.textContent=t("noMatch");return}const title=document.createElement("p");title.textContent=t("matches");result.append(title);matches.forEach(({p})=>{const row=document.createElement("div");row.className="resultItem";const name=document.createElement("b");name.textContent=p.name;const price=document.createElement("p");price.textContent=formatPrice(p.price);const button=document.createElement("button");button.className="btn";button.textContent=t("addToCart");button.addEventListener("click",()=>addCart(p.id));row.append(name,price,button);result.append(row)});$("#discover").scrollIntoView({behavior:"smooth"})}
+function safeImage(s){if(!s)return true;try{return new URL(s).protocol==="https:"}catch{return false}}
+$("#languageSelect").addEventListener("change",e=>{lang=dictionaries[e.target.value]?e.target.value:"en";applyLanguage()});
+$("#currencySelect").addEventListener("change",e=>{currency=currencyInfo[e.target.value]?e.target.value:"EUR";render()});
+$("#search").addEventListener("input",render);$("#sort").addEventListener("change",render);$("#budget").addEventListener("change",render);
+$("#chips").addEventListener("click",e=>{const b=e.target.closest("[data-cat]");if(!b)return;category=b.dataset.cat;showWishlistOnly=false;$$(".chip").forEach(x=>x.classList.toggle("active",x===b));render()});
+$("#productGrid").addEventListener("click",e=>{const w=e.target.closest("[data-wish]");if(w){toggleWish(w.dataset.wish);return}const a=e.target.closest("[data-add]");if(a){addCart(a.dataset.add);return}const d=e.target.closest("[data-details]");if(d)details(d.dataset.details)});
+$("#wishBtn").addEventListener("click",()=>{showWishlistOnly=true;category="all";$$(".chip").forEach(x=>x.classList.toggle("active",x.dataset.cat==="all"));render();openModal("wishModal")});
+$("#cartBtn").addEventListener("click",()=>{renderCart();openModal("cartModal")});
+document.addEventListener("click",e=>{const close=e.target.closest("[data-close]");if(close){closeModal(close.dataset.close);return}const rem=e.target.closest("[data-remove]");if(rem){cart.splice(Number(rem.dataset.remove),1);save();render();return}const uw=e.target.closest("[data-unwish]");if(uw){toggleWish(uw.dataset.unwish);return}const add=e.target.closest("[data-add]");if(add&&!e.target.closest("#productGrid")){addCart(add.dataset.add);return}if(e.target.classList.contains("modalbg"))closeModal(e.target.id)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")$$(".modalbg.open").forEach(m=>closeModal(m.id))});
+$("#showForm").addEventListener("click",()=>{$("#addSection").classList.remove("hidden");$("#addSection").scrollIntoView({behavior:"smooth"})});
+$("#hideForm").addEventListener("click",()=>$("#addSection").classList.add("hidden"));
+$("#productForm").addEventListener("submit",e=>{e.preventDefault();const data=new FormData(e.currentTarget);const name=String(data.get("name")||"").trim(),price=Number(data.get("price")),image=String(data.get("image")||"").trim(),desc=String(data.get("description")||"").trim(),cat=String(data.get("category")||"tech");if(!name||!Number.isFinite(price)||price<=0){toast(t("badPrice"));return}if(!safeImage(image)){toast(t("badImage"));return}const p={id:"custom-"+Date.now().toString(36)+"-"+Math.random().toString(36).slice(2,7),name,price,desc,category:cat,image,emoji:"🛍️",custom:true,keywords:name.toLowerCase()};products.push(p);if(!save()){products=products.filter(x=>x.id!==p.id);toast("Storage unavailable");return}e.currentTarget.reset();$("#addSection").classList.add("hidden");category="all";showWishlistOnly=false;$$(".chip").forEach(x=>x.classList.toggle("active",x.dataset.cat==="all"));render();toast(t("savedProduct"));$("#discover").scrollIntoView({behavior:"smooth"})});
+$("#smartSearch").addEventListener("click",assistantSearch);$("#clearPrompt").addEventListener("click",()=>{$("#prompt").value="";$("#assistantResult").replaceChildren()});
+$("#demoPay").addEventListener("click",()=>toast(t("payNote")));$("#demoCard").addEventListener("click",()=>toast(t("payNote")));
+$("#year").textContent=new Date().getFullYear();load();applyLanguage();render();
+</script>
 </body>
-</html>
+                                                                                                                                            </html>
